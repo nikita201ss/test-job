@@ -11,12 +11,26 @@
     <header>
         <nav>
             <ul class="menu">
+                
                 <li><a href="{{ route('home') }}">Главная</a></li>
                 <li><a href="{{ route('create') }}">Создать задачу</a></li>
+                @auth
+                <div class="razd">
+                    <li>
+                        <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                            <button type="submit" class="btn-auth">
+                            Выход
+                            </button>
+                        </form>
+                    </li>
+                </div>
+                @else
                 <div class="razd">
                 <li><a href="{{ route('login') }}">Вход</a></li>
                 <li><a href="{{ route('registration') }}">Регистрация</a></li>
                 </div>
+                @endauth
             </ul>
         </nav>
     </header>
