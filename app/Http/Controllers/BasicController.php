@@ -29,6 +29,7 @@ class BasicController extends Controller
         $task = new Task();
         $task->name = $request->input('name');
         $task->message = $request->input('message');
+        $task->user_id = auth()->id();
         $task->save();
 
         return redirect()->route('home');
