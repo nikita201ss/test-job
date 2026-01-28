@@ -108,3 +108,8 @@ nav {
     padding: 0;
     font-size: 24px;
 }
+
+.name-user {
+    font-size: 24px;
+    color: blue;
+}

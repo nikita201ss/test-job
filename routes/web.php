@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\Register;
 use App\Http\Controllers\BasicController;
 use GuzzleHttp\Psr7\Request;
@@ -9,7 +10,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BasicController::class, 'index'])->name('home');
 
 
-Route::get('/login', [BasicController::class, 'login'])->name('login');
+Route::get('/login', [LoginController::class, 'show'])
+    ->middleware('guest')
+    ->name('login');
+
+Route::post('/login', [LoginController::class, 'login'])
+    ->middleware('guest')
+    ->name('login.post');
 
 Route::view('/registration', 'static.reg')
     ->middleware('guest')

@@ -16,6 +16,7 @@
                 <li><a href="{{ route('create') }}">Создать задачу</a></li>
                 @auth
                 <div class="razd">
+                    <li><span class="name-user">{{ Auth::user()->name }}</span></li>
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
                         @csrf

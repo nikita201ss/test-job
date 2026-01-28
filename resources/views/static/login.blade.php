@@ -7,22 +7,12 @@
 
 @section('content')
 
-
-@extends('layouts.main')
-
-@section('header-title')
-Страница регистирации
-@endsection
-
-
-@section('content')
-
 <h1 class="">Вход в аккаунт</h1>
 
     <div class="win-reg">
         
 
-        <form method="POST" action="/login">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <label class="lab-reg">
@@ -61,15 +51,9 @@
         </form>
         <p class="">
             Нет аккаунта?
-            <a href="/login" class="">Войти</a>
+            <a href="{{ route('registration') }}" class="">Зарегистрироваться</a>
         </p>
     </div>
-
-
-@endsection
-
-
-
 
 
 @endsection
