@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class BasicController extends Controller
@@ -24,13 +25,19 @@ class BasicController extends Controller
     }
 
     public function submit(Request $request) {
-        $request->validate([
-            'name'=> 'required',
-            'message'=> 'required',
-        ]);
+
+        $task = new Task();
+        $task->name = $request->input('name');
+        $task->message = $request->input('message');
+        $task->save();
+
+        return redirect()->route('home');
     }
 
-
+    public function publication () {
+        $tasks = Task::all();
+        return view('static.home')->with('tasks', $tasks);
+    }
 
 
 

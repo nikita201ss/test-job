@@ -7,4 +7,9 @@
 
 @section('content')
 
+    <h1>Задачи</h1>
+
+
+
+
 @endsection
