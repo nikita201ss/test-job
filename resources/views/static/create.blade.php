@@ -16,8 +16,8 @@
         </ul>
     </div>
 @endif
-
-    <div class="CreateForm">
+    @auth
+    <div class="create-form">
        
         
         <form action="{{ route('create.task') }}" method="POST">
@@ -32,6 +32,6 @@
             <button type="submit">Создать</button>
         </form>
     </div>
-
-
+    @endauth
+    <p class="warning">Войдите в аккаунт для создания задач</p>
 @endsection

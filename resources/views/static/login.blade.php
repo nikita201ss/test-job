@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1 class="">Вход в аккаунт</h1>
+<h1 class="title-str">Вход в аккаунт</h1>
 
     <div class="win-reg">
         
@@ -16,7 +16,7 @@
             @csrf
 
             <label class="lab-reg">
-                <span>Имя</span>
+                <span>Логин</span>
                 <input type="text"
                         name="name"
                         placeholder="Иван"
@@ -26,7 +26,7 @@
             </label>
             @error('name')
                 <div class="">
-                    <span class="">{{ $message }}</span>
+                    <span class="mes">{{ $message }}</span>
                 </div>
             @enderror
 
@@ -49,9 +49,9 @@
                 Войти
             </button>
         </form>
-        <p class="">
+        <p class="addtxt">
             Нет аккаунта?
-            <a href="{{ route('registration') }}" class="">Зарегистрироваться</a>
+            <b><a href="{{ route('registration') }}" class="link">Зарегистрироваться</a></b>
         </p>
     </div>
 

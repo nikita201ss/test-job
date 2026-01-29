@@ -9,26 +9,32 @@
 
     @auth
         @if(auth()->user()->tasks->count() > 0)
-            <ul>
+            <div class="tasks">
+                
                 @foreach(auth()->user()->tasks as $task)
-                    <li>
+                    <div class="task">
                         <h3>{{ $task->name }}</h3>
                         <p>{{ $task->message }}</p>
                         
-                        <div>
+                        <div class="but">
                             <form action="{{ route('tasks.destroy', $task) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" > Задача выполнена (Удалить)</button>
+                                <button type="submit" class="btn-del"> Задача выполнена (Удалить)</button>
                             </form>
                         </div>
-                    </li>
+                    </div>
                 @endforeach
-            </ul>
+                    
+            </div>
         @else
-            <p>У вас пока нет задач.</p>
+            <p class="not-tasks">У вас пока нет задач.</p>
         @endif
 
+    
+
     @endauth
+
+    <p class="warning">Войдите в аккаунт для отображения задач</p>
 
 @endsection

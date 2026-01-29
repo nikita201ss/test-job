@@ -38,7 +38,7 @@
 
     @if(session('success'))
         <div class="success">
-            {{ session('success') }}
+            <p>{{ session('success') }}</p>
         </div>
     @endif
 
