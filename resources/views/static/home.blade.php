@@ -31,10 +31,9 @@
             <p class="not-tasks">У вас пока нет задач.</p>
         @endif
 
-    
-
-    @endauth
-
+    @else
     <p class="warning">Войдите в аккаунт для отображения задач</p>
+    @endauth
+    
 
 @endsection

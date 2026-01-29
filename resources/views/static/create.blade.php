@@ -32,6 +32,9 @@
             <button type="submit">Создать</button>
         </form>
     </div>
-    @endauth
+
+    @else
     <p class="warning">Войдите в аккаунт для создания задач</p>
+    @endauth
+    
 @endsection
