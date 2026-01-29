@@ -9,7 +9,11 @@
 
 1. Клонирование репозитория
 ```git clone https://github.com/nikita201ss/test-job```
-2. Настройка БД.
+2. Переходим в директорию с файлами сайта
+```bash
+cd app
+```
+3. Настройка БД.
 
     Проект работает с Sqlite, если требуется настройка MySQL:
 ```plaintext
@@ -34,7 +38,8 @@ php artisan migrate
 ```bash
 # Установка PHP-зависимости
 composer install
-
+```
+```
 # Установка JavaScript-зависимостей
 npm install
 ```
