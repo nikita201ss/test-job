@@ -35,6 +35,13 @@
             </ul>
         </nav>
     </header>
+
+    @if(session('success'))
+        <div class="success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     @yield('content')
 </body>
 </html>

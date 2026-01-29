@@ -14,14 +14,21 @@
                     <li>
                         <h3>{{ $task->name }}</h3>
                         <p>{{ $task->message }}</p>
+                        
+                        <div>
+                            <form action="{{ route('tasks.destroy', $task) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" > Задача выполнена (Удалить)</button>
+                            </form>
+                        </div>
                     </li>
                 @endforeach
             </ul>
         @else
-            <p>У вас пока нет задач. <a href="{{ route('create') }}">Создать задачу</a></p>
+            <p>У вас пока нет задач.</p>
         @endif
-    @else
-        <p>Пожалуйста, <a href="{{ route('login') }}">войдите</a> или <a href="{{ route('registration') }}">зарегистрируйтесь</a> для работы с задачами.</p>
+
     @endauth
 
 @endsection
